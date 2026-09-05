@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}History Data{% endblock %}
+{% block content %}
+<div class="space-y-4">
+    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+        <h3 class="text-lg font-semibold text-slate-800">Riwayat Pembacaan</h3>
+        <div class="flex flex-wrap gap-2">
+            <input type="date" id="filter-date-from" class="rounded-lg border border-slate-300 px-3 py-2 text-sm">
+            <input type="date" id="filter-date-to" class="rounded-lg border border-slate-300 px-3 py-2 text-sm">
+            <button id="btn-filter" class="rounded-lg bg-slate-700 text-white px-4 py-2 text-sm hover:bg-slate-800">Filter</button>
+        </div>
+    </div>
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-slate-200">
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase">ID</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase">pH</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase">TDS</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase">Suhu</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase">Status</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase">Waktu</th>
+                    </tr>
+                </thead>
+                <tbody id="history-tbody" class="divide-y divide-slate-200">
+                    <tr><td colspan="6" class="px-4 py-8 text-center text-slate-500">Memuat...</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="px-4 py-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
+            <p id="history-info" class="text-sm text-slate-500">-</p>
+            <div class="flex gap-2" id="pagination-btns"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/history.js"></script>
+{% endblock %}

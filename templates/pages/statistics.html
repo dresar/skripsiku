@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Statistik{% endblock %}
+{% block content %}
+<div class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="stats-cards">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">Rata-rata pH</p>
+            <p id="stat-avg-ph" class="text-2xl font-bold text-slate-800 mt-1">--</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">Rata-rata TDS</p>
+            <p id="stat-avg-tds" class="text-2xl font-bold text-slate-800 mt-1">--</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">Total Pembacaan</p>
+            <p id="stat-total" class="text-2xl font-bold text-slate-800 mt-1">--</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">Status Dominan</p>
+            <p id="stat-dominant" class="text-lg font-bold mt-1 px-3 py-1 rounded-lg inline-block">--</p>
+        </div>
+    </div>
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-800 mb-4">Distribusi Status Mutu</h3>
+        <div class="h-80">
+            <canvas id="chart-status"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/statistics.js"></script>
+{% endblock %}

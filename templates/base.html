@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_title | default('Latex Smart Monitoring') }}{% endblock %} | Latex Smart Monitoring</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/static/css/app.css">
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen" x-data="{ sidebarOpen: false }">
+    <div class="flex min-h-screen">
+        {% include "components/sidebar.html" %}
+        <div class="flex-1 flex flex-col lg:ml-64">
+            {% include "components/navbar.html" %}
+            <main class="flex-1 p-4 md:p-6 lg:p-8">
+                {% block content %}{% endblock %}
+            </main>
+            {% include "components/footer.html" %}
+        </div>
+    </div>
+    <div x-show="sidebarOpen" x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-40 bg-black/50 lg:hidden" @click="sidebarOpen = false"
+         x-cloak style="display: none;"></div>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

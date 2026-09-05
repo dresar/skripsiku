@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="space-y-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">pH</p>
+            <p id="card-ph" class="text-2xl font-bold text-slate-800 mt-1">--</p>
+            <p class="text-xs text-slate-400 mt-1">Realtime</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">TDS (ppm)</p>
+            <p id="card-tds" class="text-2xl font-bold text-slate-800 mt-1">--</p>
+            <p class="text-xs text-slate-400 mt-1">Realtime</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">Suhu (°C)</p>
+            <p id="card-suhu" class="text-2xl font-bold text-slate-800 mt-1">--</p>
+            <p class="text-xs text-slate-400 mt-1">Realtime</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <p class="text-sm font-medium text-slate-500">Status Mutu</p>
+            <p id="card-status" class="text-lg font-bold mt-1 px-3 py-1 rounded-lg inline-block">--</p>
+            <p class="text-xs text-slate-400 mt-2">Thresholding pH</p>
+        </div>
+    </div>
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-800 mb-4">Grafik 30 Data Terakhir</h3>
+        <div class="h-80">
+            <canvas id="chart-realtime"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/dashboard.js"></script>
+{% endblock %}

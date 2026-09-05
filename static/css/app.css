@@ -1,0 +1,23 @@
+/* Latex Smart Monitoring - Custom styles */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Status badge colors */
+.status-prima {
+  background-color: #22c55e;
+  color: white;
+}
+.status-sedang {
+  background-color: #eab308;
+  color: #1e293b;
+}
+.status-buruk {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Chart container */
+canvas {
+  max-height: 320px;
+}

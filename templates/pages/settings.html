@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Pengaturan Sistem{% endblock %}
+{% block content %}
+<div class="max-w-2xl space-y-6">
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-800 mb-4">Informasi MQTT</h3>
+        <dl class="space-y-3 text-sm">
+            <div class="flex justify-between"><dt class="text-slate-500">Broker</dt><dd class="font-mono text-slate-800">{{ mqtt_broker | default('-') }}</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-500">Port</dt><dd class="font-mono text-slate-800">{{ mqtt_port | default('-') }}</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-500">Topic</dt><dd class="font-mono text-slate-800 break-all">{{ mqtt_topic | default('-') }}</dd></div>
+        </dl>
+    </div>
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-800 mb-4">Informasi Sistem</h3>
+        <dl class="space-y-3 text-sm">
+            <div class="flex justify-between"><dt class="text-slate-500">Nama Aplikasi</dt><dd class="text-slate-800">{{ app_name | default('-') }}</dd></div>
+            <div class="flex justify-between"><dt class="text-slate-500">Versi</dt><dd class="text-slate-800">{{ app_version | default('-') }}</dd></div>
+        </dl>
+    </div>
+</div>
+{% endblock %}

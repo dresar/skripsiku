@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Tentang Sistem{% endblock %}
+{% block content %}
+<div class="max-w-2xl space-y-6">
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-800 mb-2">Tentang Sistem</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+            Sistem Deteksi Mutu Lateks Portabel Berbasis IoT dengan implementasi algoritma thresholding pH pada ESP32 untuk smart monitoring.
+        </p>
+        <p class="text-slate-600 text-sm leading-relaxed mt-3">
+            Sistem ini menerima data dari sensor (pH, TDS, suhu) via MQTT, menyimpan ke database, dan menampilkan dashboard realtime serta riwayat dan statistik.
+        </p>
+    </div>
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-800 mb-4">Teknologi</h3>
+        <ul class="text-sm text-slate-600 space-y-2">
+            <li>• ESP32 — Mikrokontroler & publisher MQTT</li>
+            <li>• MQTT — Protokol messaging</li>
+            <li>• FastAPI — Backend REST API & WebSocket</li>
+            <li>• SQLite — Database</li>
+            <li>• Dashboard — Jinja2, TailwindCSS, Chart.js</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
